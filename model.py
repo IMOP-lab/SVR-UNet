@@ -6,7 +6,6 @@ from networks.nnFormer.nnFormer_seg import nnFormer
 from networks.SwinUNETR.SwinUNETR import SwinUNETR
 from networks.mednext.MedNext import MedNeXt
 from monai.networks.nets.swin_unetr import SwinUNETR
-from networks.UNesT.unest import UNesT
 from networks.SwinSMT.src.models.swin_smt import SwinSMT
 from networks.nnWNet.nnWNet import WNet3D
 from networks.SuperLightNet.superlightnet import NormalU_Net
@@ -70,12 +69,6 @@ def get3dmodel(network, in_channel, out_classes):
             feature_size=48,
             use_checkpoint=False)
 
-
-    elif network == 'UNesT':
-        model = UNesT(
-            in_channels=in_channel,
-            out_channels=out_classes
-        )
     
     elif network == 'SwinSMT':
         model = SwinSMT(
